@@ -1,0 +1,9 @@
+---
+- hosts: all
+  gather_facts: no
+  become: yes
+  tasks:
+    - local_action: command whoami
+      become: no
+      register: result
+    - debug: var=result
